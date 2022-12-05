@@ -80,7 +80,7 @@ int pthread_create(pthread_t *thread,
 	}
 
 	if (ptcb->attr.detachstate == PTHREAD_CREATE_JOINABLE) {
-		ret = sem_init(&(ptcb->join_sem), 0, 1);    // ljh: 将0改成1防止报错，为什么这里要value = 0？
+		ret = 0; // sem_init(&(ptcb->join_sem), 0, 1);    // ljh: 将0改成1防止报错，为什么这里要value = 0？
 		if (ret != 0) {
 			ret = -1;
 			if (ptcb != NULL) {
