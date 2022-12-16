@@ -111,7 +111,7 @@ int sem_trywait(sem_t *sem){
 int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout){
 	INT8U *perr = NULL;
 	int flag = 0;
-	INT32U timeout_ms = 0;    // 把 int64u_t 改为INT32U
+	INT32U timeout_ms = 0;    // ljh: 把 int64u_t 改为INT32U
 	struct timespec cur_time = { 0 };
 	struct timespec rel_time = { 0 };
 	if ((sem == NULL) || (abs_timeout == NULL)) {
